@@ -29,5 +29,9 @@ public class ArticleController {
 		return view;
 	}
 	
-	/// ???
+	@RequestMapping("/test")
+	public String viewTestPage() {
+		return "/article/test";
+	}
+	
 }
