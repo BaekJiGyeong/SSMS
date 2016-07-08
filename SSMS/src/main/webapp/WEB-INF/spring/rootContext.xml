@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
+
+<!--  Connection Pool  -->
+	<bean id="dataSource"
+			class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" ></property>
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:XE"></property>
+		<property name="username" value="HR"></property>
+		<property name="password" value="hr"></property>
+	</bean>
+
+<!-- MyBatis 가 사용할 Database에 연결하도록 설정 -->	
+	<bean id="sqlSessionFactory"
+			class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="classpath:/mybatis.xml"></property>
+	</bean>
+	
+<!-- MyBatis의 CRUD 템플릿을 사용할 수 있도록 설정 -->	
+	<bean id="sqlSessionTemplate"
+	  		class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sqlSessionFactory"/> 
+	</bean>
+	
+<!--  Transaction 설정하기  -->
+<!--  Transaction Manager 설정  -->
+	<bean id="transactionManager"
+			class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"/>		
+	</bean>
+	
+<!--  Transaction 대상 설정  -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="tx*" rollback-for="RuntimeException"/>
+
+			<tx:method name="insert*" rollback-for="RuntimeException"/>
+			<tx:method name="write*" rollback-for="RuntimeException"/>
+			<tx:method name="add*" rollback-for="RuntimeException"/>
+			<tx:method name="create*" rollback-for="RuntimeException"/>
+			<tx:method name="regist*" rollback-for="RuntimeException"/>
+			<tx:method name="set*" rollback-for="RuntimeException"/>
+			
+			<tx:method name="update*" rollback-for="RuntimeException"/>
+			<tx:method name="modify*" rollback-for="RuntimeException"/>
+			<tx:method name="edit*" rollback-for="RuntimeException"/>
+			<tx:method name="change*" rollback-for="RuntimeException"/>
+			
+			<tx:method name="delete*" rollback-for="RuntimeException"/>
+			<tx:method name="remove*" rollback-for="RuntimeException"/>
+			<tx:method name="terminate*" rollback-for="RuntimeException"/>
+			
+			<tx:method name="read*" read-only="true"/>
+			<tx:method name="select*" read-only="true"/>
+			<tx:method name="get*" read-only="true"/>
+			
+		</tx:attributes>
+	</tx:advice>
+	
+	<aop:config>
+		<aop:pointcut expression="execution(public * com.ktds.jgbaek..web.*.*(..))" id="controllerTx"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="controllerTx"/>
+	</aop:config>
+
+</beans>
