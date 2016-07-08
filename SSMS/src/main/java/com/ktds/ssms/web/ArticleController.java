@@ -28,10 +28,6 @@ public class ArticleController {
 		view.setViewName("/article/list");
 		return view;
 	}
-	
-	@RequestMapping("/test")
-	public String viewTestPage() {
-		return "/article/test";
-	}
+
 	
 }
