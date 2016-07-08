@@ -30,4 +30,6 @@ public class ArticleController {
 		view.setViewName("/article/list");
 		return view;
 	}
+
+	
 }
