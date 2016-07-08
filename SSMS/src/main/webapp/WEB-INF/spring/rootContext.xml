@@ -65,7 +65,7 @@
 	</tx:advice>
 	
 	<aop:config>
-		<aop:pointcut expression="execution(public * com.ktds.jgbaek..web.*.*(..))" id="controllerTx"/>
+		<aop:pointcut expression="execution(public * com.ktds.ssms..web.*.*(..))" id="controllerTx"/>
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="controllerTx"/>
 	</aop:config>
 
