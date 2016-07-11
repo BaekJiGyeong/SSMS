@@ -1,4 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html >
 <!--
 Design by TEMPLATED
 http://templated.co
@@ -18,6 +21,14 @@ Released   : 20140216
 <meta name="description" content="" />
 <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" />
 
+<script type="text/javascript" src="<c:url value="/resources/js/jquery.min.js" />"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+			
+
+	});
+
+</script>
 
 <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
 
@@ -29,16 +40,16 @@ Released   : 20140216
 			<h1><a href="#">SSMS</a></h1>
 		</div>
 		<div id="menu">
-			<ul>
-				<li class="current_page_item"><a href="#" accesskey="1" title="">Homepage</a></li>
-				<li><a href="#" accesskey="2" title="">Our Clients</a></li>
-				<li><a href="#" accesskey="3" title="">About Us</a></li>
-				<li><a href="#" accesskey="4" title="">Careers</a></li>
-				<li><a href="#" accesskey="5" title="">Contact Us</a></li>
+			<ul id="ulMenu">
+				<li ><a href="/SSMS/list" accesskey="1" title="">Homepage</a></li>
+				<li ><a href="/SSMS/introduction" accesskey="2" title="">ABOUT US</a></li>
+				<li ><a href="#" accesskey="3" title="">patient LOCATION</a></li>
+				<li ><a href="#" accesskey="4" title="">MAP GUIDE</a></li>
+				<li ><a href="#" accesskey="5" title="">Contact Us</a></li>
 			</ul>
 		</div>
 	</div>
-	<!-- <div id="banner">&nbsp;</div> -->
+	<div id="banner" style="background-image: url(resources/img/banner.jpg);">&nbsp;</div>
 	<div id="featured">
 		<div class="container">
 			<div class="title">

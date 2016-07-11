@@ -395,7 +395,7 @@
 	{
 		overflow: hidden;
 		padding: 10em 0em;
-		background: url(resources/img/banner.jpg) no-repeat center;
+		background-image: url(resources/img/banner.jpg);
 		background-size: cover;
 		text-align: center;
 		color: rgba(255,255,255,.8);

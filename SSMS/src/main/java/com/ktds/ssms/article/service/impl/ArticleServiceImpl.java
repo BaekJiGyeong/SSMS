@@ -1,7 +1,7 @@
-package com.ktds.ssms.service.impl;
+package com.ktds.ssms.article.service.impl;
 
-import com.ktds.ssms.biz.ArticleBiz;
-import com.ktds.ssms.service.ArticleService;
+import com.ktds.ssms.article.biz.ArticleBiz;
+import com.ktds.ssms.article.service.ArticleService;
 
 public class ArticleServiceImpl implements ArticleService {
 	

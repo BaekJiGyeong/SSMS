@@ -1,4 +1,4 @@
-package com.ktds.ssms.dao.impl;
+package com.ktds.ssms.article.dao.impl;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,8 +9,8 @@ import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.ktds.ssms.biz.ArticleBiz;
-import com.ktds.ssms.dao.ArticleDAO;
+import com.ktds.ssms.article.biz.ArticleBiz;
+import com.ktds.ssms.article.dao.ArticleDAO;
 
 public class ArticleDAOImpl extends SqlSessionDaoSupport implements ArticleDAO{
 

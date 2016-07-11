@@ -1,4 +1,4 @@
-package com.ktds.ssms.dao;
+package com.ktds.ssms.article.dao;
 
 import java.util.List;
 

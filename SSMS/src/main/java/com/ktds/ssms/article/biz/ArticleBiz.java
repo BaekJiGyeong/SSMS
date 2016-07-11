@@ -1,4 +1,4 @@
-package com.ktds.ssms.biz;
+package com.ktds.ssms.article.biz;
 
 import java.util.List;
 

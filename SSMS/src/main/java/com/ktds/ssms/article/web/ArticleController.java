@@ -1,4 +1,4 @@
-package com.ktds.ssms.web;
+package com.ktds.ssms.article.web;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.ktds.ssms.service.ArticleService;
+import com.ktds.ssms.article.service.ArticleService;
 
 
 @Controller
@@ -22,12 +22,17 @@ public class ArticleController {
 		this.articleService = articleService;
 	}
 
-
-
 	@RequestMapping("/list")
 	public ModelAndView articleList() {
 		ModelAndView view = new ModelAndView();
 		view.setViewName("/article/list");
+		return view;
+	}
+	
+	@RequestMapping("/introduction")
+	public ModelAndView introduction() {
+		ModelAndView view = new ModelAndView();
+		view.setViewName("/article/introduction");
 		return view;
 	}
 

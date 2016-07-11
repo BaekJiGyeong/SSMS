@@ -1,12 +1,12 @@
-package com.ktds.ssms.biz.impl;
+package com.ktds.ssms.article.biz.impl;
 
 import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.ktds.ssms.biz.ArticleBiz;
-import com.ktds.ssms.dao.ArticleDAO;
+import com.ktds.ssms.article.biz.ArticleBiz;
+import com.ktds.ssms.article.dao.ArticleDAO;
 
 public class ArticleBizImpl implements ArticleBiz {
 

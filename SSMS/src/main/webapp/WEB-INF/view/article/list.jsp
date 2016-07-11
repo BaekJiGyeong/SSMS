@@ -7,20 +7,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-	하이
-	헬로우
-	반갑습니다<br/>
-	내용을 쓰시오
 	
-	<div id="page" class="container">
+	<div id="page" class="container" >
 		<div class="title">
-			<h2>Nulla luctus eleifend</h2>
-			<span class="byline">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</span> </div>
+			<h2>스마트 요양원 관리 시스템</h2>
+			<span class="byline">방문을 환영합니다</span> </div>
 		
-		<p>Vivamus fermentum nibh in augue. Praesent a lacus at urna congue rutrum. Nulla enim eros nibh. Duis enim nulla, luctus eu, dapibus lacinia, venenatis id, quam. Vestibulum imperdiet, magna nec eleifend rutrum, nunc lectus vestibulum velit, euismod lacinia quam nisl id lorem. Quisque erat. Vestibulum pellentesque, justo mollis pretium suscipit, justo nulla blandit libero, in blandit augue justo quis nisl. Fusce mattis viverra elit. Fusce quis tortor.</p>
+		<p>이 시스템을 이용하여 요양원 내의 환자 위치를 알 수 있습니다.</p>
 		<ul class="actions">
-			<li><a href="#" class="button">Etiam posuere</a></li>
+			<li><a href="#" class="button">시작하기</a></li>
 		</ul>
 	</div>
 	
