@@ -28,7 +28,7 @@
 			class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"/>
 
 	<bean id="articleController"
-			class="com.ktds.ssms.web.ArticleController">
+			class="com.ktds.ssms.article.web.ArticleController">
 		<property name="articleService" ref="articleService"/>
 	</bean>
 

@@ -11,6 +11,6 @@
 	</typeAliases>
 	 -->
 	<mappers>
-		<mapper resource="/com/ktds/ssms/dao/impl/sql/articleDAO.xml"/>
+		<mapper resource="/com/ktds/ssms/article/dao/impl/sql/articleDAO.xml"/>
 	</mappers>
 </configuration>
