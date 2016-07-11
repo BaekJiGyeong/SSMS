@@ -42,8 +42,8 @@ Released   : 20140216
 	<div id="featured">
 		<div class="container">
 			<div class="title">
-				<h2>Smart Sanitorium Management System</h2>
-				<span class="byline">Smart Sanitorium Management System</span> 
+				<h2>Smart Sanatorium Management System</h2>
+				<span class="byline">Smart Sanatorium Management System</span> 
 			</div>
 	
 		</div>

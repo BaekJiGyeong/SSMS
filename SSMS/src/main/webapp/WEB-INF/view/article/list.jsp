@@ -7,12 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-하이
-헬로우
-반갑습니다<br/>
-내용을 쓰시오
 
-<div id="page" class="container">
+	하이
+	헬로우
+	반갑습니다<br/>
+	내용을 쓰시오
+	
+	<div id="page" class="container">
 		<div class="title">
 			<h2>Nulla luctus eleifend</h2>
 			<span class="byline">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</span> </div>
@@ -22,6 +23,6 @@
 			<li><a href="#" class="button">Etiam posuere</a></li>
 		</ul>
 	</div>
-
+	
 </body>
 </html>
