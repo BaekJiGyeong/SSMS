@@ -11,12 +11,6 @@ public class ArticleDAOImpl extends SqlSessionDaoSupport implements ArticleDAO{
 
 	private Logger logger = LoggerFactory.getLogger(ArticleBiz.class);
 	
-	private ArticleDAO articleDAO;
-	
-	//반드시 setter가 있어야함
-	public void setArticleDAO(ArticleDAO articleDAO) {
-		this.articleDAO = articleDAO;
-	}
 	
 	
 }
