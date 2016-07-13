@@ -31,5 +31,10 @@
 			class="com.ktds.ssms.article.web.ArticleController">
 		<property name="articleService" ref="articleService"/>
 	</bean>
+	
+	<bean id="memberController"
+			class="com.ktds.ssms.member.web.MemberController">
+			<property name="memberService" ref="memberService" />
+	</bean>
 
 </beans>

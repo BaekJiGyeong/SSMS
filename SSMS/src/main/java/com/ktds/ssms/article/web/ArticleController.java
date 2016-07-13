@@ -36,5 +36,4 @@ public class ArticleController {
 		return view;
 	}
 
-	
 }

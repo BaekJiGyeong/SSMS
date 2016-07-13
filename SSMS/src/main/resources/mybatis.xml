@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
-			"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD config 3.0//EN"
+					"http://mybatis.org/dtd/mybatis-3-config.dtd">
 				
 <configuration>
 
-	<!-- 이제 com.ktds.jgbaek.vo.EmployeesVO대신 EmployeeVO써도 알아서 패키지를 찾아간다. -->
-	<!-- 다른데서 EmployeeVO를 쓰면 제일먼저 별칭이 있나 찾아준다. -->
-<!-- <typeAliases>	
-		<typeAlias type="com.ktds.jgbaek.vo.EmployeesVO" alias="EmployeesVO"/>
+	<typeAliases>
+		<typeAlias type="com.ktds.ssms.member.vo.MemberVO" alias="MemberVO"/>
 	</typeAliases>
-	 -->
+	
 	<mappers>
-		<mapper resource="/com/ktds/ssms/article/dao/impl/sql/articleDAO.xml"/>
+		<mapper resource="com/ktds/ssms/article/dao/impl/sql/articleDAO.xml"/>
+		<mapper resource="com/ktds/ssms/member/dao/impl/sql/memberDAO.xml" />
 	</mappers>
 </configuration>
