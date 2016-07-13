@@ -12,14 +12,13 @@
    								, SALT
    								, PASSWORD
    							) 
-		VALUES 				( 
-								#{id}
+		VALUES 				( 	#{id}
 								, #{name}
 								, #{birthday}
 								, #{phoneNumber}
 								, #{salt}
-								, #{password} 
- 							)
+								, #{password}
+							)
 	</insert>
-	
+
 </mapper>
