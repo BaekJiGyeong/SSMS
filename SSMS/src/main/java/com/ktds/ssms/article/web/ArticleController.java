@@ -35,6 +35,15 @@ public class ArticleController {
 		view.setViewName("/article/introduction");
 		return view;
 	}
+	
+	@RequestMapping("/mapGuide")
+	public ModelAndView location() {
+		ModelAndView view = new ModelAndView();
+		view.setViewName("/article/mapGuide");
+		return view;
+	}
+	
+	
 
 	
 }
