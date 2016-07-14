@@ -9,7 +9,6 @@ import com.ktds.ssms.article.dao.ArticleDAO;
 
 public class ArticleDAOImpl extends SqlSessionDaoSupport implements ArticleDAO{
 
-	private Logger logger = LoggerFactory.getLogger(ArticleBiz.class);
 	
 	
 	

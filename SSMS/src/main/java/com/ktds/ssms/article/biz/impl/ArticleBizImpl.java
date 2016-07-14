@@ -8,7 +8,7 @@ import com.ktds.ssms.article.dao.ArticleDAO;
 
 public class ArticleBizImpl implements ArticleBiz {
 
-	   private Logger logger = LoggerFactory.getLogger(ArticleBiz.class);
+	   private Logger logger = LoggerFactory.getLogger(ArticleBizImpl.class);
 	   
 	   private ArticleDAO articleDAO;
 	   
