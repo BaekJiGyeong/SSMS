@@ -36,7 +36,6 @@ public class MemberController {
 	
 	@RequestMapping("/doRegisterMemberAction")
 	public ModelAndView doRegisterMemberAction(@Valid MemberVO member, Errors errors) {
-		
 		return memberService.addNewMember(member, errors);
 	}
 	
