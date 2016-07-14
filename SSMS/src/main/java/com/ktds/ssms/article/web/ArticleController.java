@@ -37,11 +37,20 @@ public class ArticleController {
 	}
 	
 	@RequestMapping("/mapGuide")
-	public ModelAndView location() {
+	public ModelAndView mapGuide() {
 		ModelAndView view = new ModelAndView();
 		view.setViewName("/article/mapGuide");
 		return view;
 	}
+	
+	@RequestMapping("/patientLoc")
+	public ModelAndView patientLoc() {
+		ModelAndView view = new ModelAndView();
+		view.setViewName("/article/patientLoc");
+		return view;
+	}
+	
+	
 	
 	
 

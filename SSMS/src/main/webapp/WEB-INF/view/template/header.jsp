@@ -25,7 +25,6 @@ Released   : 20140216
 <script type="text/javascript">
 	$(document).ready(function() {
 			
-
 	});
 
 </script>
@@ -43,7 +42,7 @@ Released   : 20140216
 			<ul id="ulMenu">
 				<li ><a href="/SSMS/list" accesskey="1" title="">Homepage</a></li>
 				<li ><a href="/SSMS/introduction" accesskey="2" title="">ABOUT US</a></li>
-				<li ><a href="#" accesskey="3" title="">patient LOCATION</a></li>
+				<li ><a href="/SSMS/patientLoc" accesskey="3" title="">patient LOCATION</a></li>
 				<li ><a href="/SSMS/mapGuide" accesskey="4" title="">MAP GUIDE</a></li>
 				<li ><a href="/SSMS/login" accesskey="5" title="">Login</a></li>
 			</ul>
