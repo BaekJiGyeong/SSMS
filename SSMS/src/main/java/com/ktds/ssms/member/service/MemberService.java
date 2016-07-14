@@ -1,5 +1,7 @@
 package com.ktds.ssms.member.service;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.validation.Errors;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -10,5 +12,7 @@ public interface MemberService {
 	public ModelAndView registerMember();
 
 	public ModelAndView addNewMember(MemberVO member, Errors errors);
+
+	public ModelAndView doLoginMember(MemberVO member, HttpSession session);
 
 }

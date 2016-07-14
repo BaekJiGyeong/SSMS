@@ -9,11 +9,16 @@ public class MemberDAOImpl extends SqlSessionDaoSupport implements MemberDAO{
 
 	@Override
 	public int addNewMember(MemberVO member) {
-		
-		member.setSalt("sfdsfsdfd");
-		
 		return getSqlSession().insert("MemberDAO.addNewMember", member);
 	}
 
+	@Override
+	public String getSaltById(String id) {
+		return getSqlSession().selectOne("MemberDAO.getSaltById", id);
+	}
 
+	@Override
+	public MemberVO doLoginMember(MemberVO member) {
+		return getSqlSession().selectOne("MemberDAO.doLoginMember", member);
+	}
 }

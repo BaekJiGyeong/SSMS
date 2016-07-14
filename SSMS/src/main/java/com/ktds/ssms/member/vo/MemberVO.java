@@ -21,6 +21,14 @@ public class MemberVO {
 	
 	private String salt;
 	
+	private String isAdmin;
+	
+	public String getIsAdmin() {
+		return isAdmin;
+	}
+	public void setIsAdmin(String isAdmin) {
+		this.isAdmin = isAdmin;
+	}
 	public String getSalt() {
 		return salt;
 	}

@@ -6,6 +6,13 @@
 <script type="text/javascript" src="<c:url value='/resources/js/jquery.min.js"'/>"></script>
 <script type="text/javascript">
 $(document).ready(function(){
+	
+	$("#id").focus();
+	
+	if ( $("#loginFail").val() == "Y") {
+		alert("로그인이 실패했습니다");
+	}
+	
 	$(".login .loginButton").click(function() {
 		if( $("#id").val() == "" ) {
 			alert("ID를 입력하세요!");
@@ -18,31 +25,28 @@ $(document).ready(function(){
 			return;
 		}
 		
-		$.post("<c:url value='/login'/>", $("#loginForm").serialize(), function(data) {
-			if(data == "OK") {
-				alert("로그인이 완료되었습니다. 페이지를 새로고침합니다.");
-				location.href="<c:url value='/main'/>";
-			} else if (data == "NO") {
-				alert("로그인이 실패했습니다. 아이디 혹은 비밀번호를 확인해 주세요.");
-				$("#id").focus();
-			} else if (data == "OVER") {
-				alert("로그인이 지속 실패하여, 계정이 잠겼습니다. 운영자에게 문의하세요!");
-				$("#id").focus();
-			}
-		});
 	});
 	
-	$(".registButton").click(function() {
+	$("#id, #password").keypress(function (e) {
+        if (e.keyCode === 13) {
+            $(".login .loginButton").click();
+        }
+    });
+	
+	$(".login .loginButton").click(function() {
+		var form = $("#loginForm");
+		form.attr("method","post");
+		form.attr("action","<c:url value="/doLogin"/>");
+		form.submit();
+	});
+	
+	$(".login .registButton").click(function() {
 		location.href = "<c:url value="/register" />";
 	});
 	
-	$(".login .loginButton, .login .registButton").keypress(function (e) {
-        if (e.keyCode === 13) {
-            $(this).click();
-        }
-    });
 });
 </script>
+
 <div class="login">
 	<div class="wrapper">
 		<form id="loginForm" name="loginForm">
@@ -51,5 +55,7 @@ $(document).ready(function(){
 			<span class="button loginButton" style="cursor: pointer;" tabindex="3" >Login</span>
 			<span class="button registButton" style="cursor: pointer;" tabindex="4" >Sign Up</span>
 		</form>
+		
+		<input type="hidden" id="loginFail" value="${param.loginFail}" />
 	</div>
 </div>

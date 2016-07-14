@@ -20,5 +20,22 @@
 								, #{password}
 							)
 	</insert>
+	
+	<select id="getSaltById" parameterType="string" resultType="string">
+		SELECT	SALT salt
+		FROM	MEMBER
+		WHERE	MBR_ID = #{id}
+	</select>
+	
+	<select id="doLoginMember" parameterType="MemberVO" resultType="MemberVO">
+		SELECT	MBR_ID id
+				, MBR_NAME name
+				, BIRTHDAY birthday
+				, PHONE phoneNumber
+				, IS_ADMIN isAdmin
+		FROM	MEMBER
+		WHERE	MBR_ID = #{id}
+		AND		PASSWORD = #{password}
+	</select>
 
 </mapper>

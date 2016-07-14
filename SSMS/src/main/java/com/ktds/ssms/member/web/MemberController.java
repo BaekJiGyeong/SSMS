@@ -1,5 +1,6 @@
 package com.ktds.ssms.member.web;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
@@ -7,12 +8,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ktds.ssms.member.service.MemberService;
 import com.ktds.ssms.member.vo.MemberVO;
-
 
 @Controller
 public class MemberController {
@@ -37,6 +36,11 @@ public class MemberController {
 	@RequestMapping("/doRegisterMemberAction")
 	public ModelAndView doRegisterMemberAction(@Valid MemberVO member, Errors errors) {
 		return memberService.addNewMember(member, errors);
+	}
+	
+	@RequestMapping("/doLogin")
+	public ModelAndView doLoginMember(MemberVO member, HttpSession session) {
+		return memberService.doLoginMember(member, session);
 	}
 	
 }
