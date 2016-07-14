@@ -13,9 +13,9 @@
 	<bean id="dataSource"
 			class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" ></property>
-		<property name="url" value="jdbc:oracle:thin:@localhost:1521:XE"></property>
-		<property name="username" value="HR"></property>
-		<property name="password" value="hr"></property>
+		<property name="url" value="jdbc:oracle:thin:@10.225.152.181:1521:XE"></property>
+		<property name="username" value="SSMS"></property>
+		<property name="password" value="SSMS"></property>
 	</bean>
 
  <!-- 위의 정보를 이용해서 db에 붙어라 -->
