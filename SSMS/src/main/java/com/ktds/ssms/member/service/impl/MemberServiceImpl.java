@@ -1,5 +1,6 @@
 package com.ktds.ssms.member.service.impl;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -10,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.ktds.ssms.member.biz.MemberBiz;
 import com.ktds.ssms.member.service.MemberService;
 import com.ktds.ssms.member.vo.MemberVO;
+import com.ktds.ssms.utilities.AjaxUtil;
 
 public class MemberServiceImpl implements MemberService {
 
@@ -79,6 +81,24 @@ public class MemberServiceImpl implements MemberService {
 		session.removeAttribute("_MEMBER_");
 		
 		return "redirect:/list";
+	}
+
+	@Override
+	public void checkValidationById(String id, HttpServletResponse response) {
+
+		String message = "OK";
+		
+		boolean isExistId = memberBiz.isExistId(id);
+		
+		if ( !isExistId ) {
+			message = "NO";
+			AjaxUtil.sendResponse(response, message);
+			return;
+		}
+		
+		AjaxUtil.sendResponse(response, message);
+		return;
+		
 	}
 
 }

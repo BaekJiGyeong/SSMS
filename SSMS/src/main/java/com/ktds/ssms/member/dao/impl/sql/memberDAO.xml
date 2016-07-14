@@ -60,5 +60,11 @@
 	    						, SYSDATE
 	    					  )
 	</insert>
+	
+	<select id="isExistId" parameterType="string" resultType="string">
+		SELECT	MBR_ID
+		FROM	MEMBER
+		WHERE	MBR_ID = #{id}
+	</select>
 
 </mapper>

@@ -17,4 +17,6 @@ public interface MemberDAO {
 
 	public void insertLoginLog(LoginLogVO loginLogVO);
 
+	public String isExistId(String id);
+
 }

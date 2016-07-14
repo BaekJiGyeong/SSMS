@@ -86,4 +86,15 @@ public class MemberBizImpl implements MemberBiz{
 		return source;
 	}
 
+	@Override
+	public boolean isExistId(String id) {
+		
+		if ( memberDAO.isExistId(id) == null ) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
 }

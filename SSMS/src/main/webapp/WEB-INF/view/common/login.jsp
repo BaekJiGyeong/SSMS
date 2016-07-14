@@ -13,6 +13,12 @@ $(document).ready(function(){
 		alert("로그인이 실패했습니다");
 	}
 	
+	$("#id, #password").keypress(function (e) {
+        if (e.keyCode === 13) {
+            $(".login .loginButton").click();
+        }
+    });
+	
 	$(".login .loginButton").click(function() {
 		if( $("#id").val() == "" ) {
 			alert("ID를 입력하세요!");
@@ -25,15 +31,6 @@ $(document).ready(function(){
 			return;
 		}
 		
-	});
-	
-	$("#id, #password").keypress(function (e) {
-        if (e.keyCode === 13) {
-            $(".login .loginButton").click();
-        }
-    });
-	
-	$(".login .loginButton").click(function() {
 		var form = $("#loginForm");
 		form.attr("method","post");
 		form.attr("action","<c:url value="/doLogin"/>");

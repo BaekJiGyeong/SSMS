@@ -37,4 +37,9 @@ public class MemberDAOImpl extends SqlSessionDaoSupport implements MemberDAO{
 	public void insertLoginLog(LoginLogVO loginLogVO) {
 		getSqlSession().insert("MemberDAO.insertLoginLog", loginLogVO);
 	}
+
+	@Override
+	public String isExistId(String id) {
+		return getSqlSession().selectOne("MemberDAO.isExistId", id);
+	}
 }
