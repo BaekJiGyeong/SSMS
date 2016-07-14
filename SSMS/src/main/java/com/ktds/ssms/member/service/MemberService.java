@@ -15,4 +15,6 @@ public interface MemberService {
 
 	public ModelAndView doLoginMember(MemberVO member, HttpSession session);
 
+	public String doLogoutMember(HttpSession session);
+
 }

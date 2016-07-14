@@ -43,4 +43,9 @@ public class MemberController {
 		return memberService.doLoginMember(member, session);
 	}
 	
+	@RequestMapping("/logout")
+	public String doLogoutMember(HttpSession session) {
+		return memberService.doLogoutMember(session);
+	}
+	
 }

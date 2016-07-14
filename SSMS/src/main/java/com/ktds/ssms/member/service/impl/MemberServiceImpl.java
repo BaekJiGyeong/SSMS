@@ -73,4 +73,12 @@ public class MemberServiceImpl implements MemberService {
 		}
 	}
 
+	@Override
+	public String doLogoutMember(HttpSession session) {
+		
+		session.removeAttribute("_MEMBER_");
+		
+		return "redirect:/list";
+	}
+
 }

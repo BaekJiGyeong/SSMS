@@ -14,8 +14,8 @@ var canvas, context;
 		context = canvas.getContext("2d");
 		
 		context.fillStyle="#FF0000";
-		context.fillRect(25, 25, 100, 100); // 속이 꽉찬 사각형
-		context.clearRect(30, 30, 75, 90); // 지정한 영역을 투명하게 만들어준다.
+		context.fillRect(27, 27, 80, 113); // 속이 꽉찬 사각형
+		context.clearRect(32, 32, 69, 102); // 지정한 영역을 투명하게 만들어준다.
 	
 		canvas.style.marginLeft = w;
 		canvas.style.marginTop = h;
