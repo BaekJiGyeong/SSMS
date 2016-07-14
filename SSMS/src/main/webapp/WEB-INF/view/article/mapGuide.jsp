@@ -8,8 +8,13 @@
 </head>
 <body>
 
-<div id="page" class="container" style="background-image: url(resources/img/map.jpg);">
-</div>
+<div id="page" class="container" >
+	<div class="title" style="text-align: left;">
+		<h2>시설 안내</h2><br/><br/>
+		<div  style="text-align: center;">
+			<img src="resources/img/map.jpg" style="width:800px;height:500px;">
+		</div >
+	</div>
 
 </body>
 </html>

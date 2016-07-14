@@ -6,10 +6,12 @@
 
 	<typeAliases>
 		<typeAlias type="com.ktds.ssms.member.vo.MemberVO" alias="MemberVO"/>
+		<typeAlias type="com.ktds.ssms.mobile.vo.LocationLogVO" alias="LocationLogVO"/>
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="com/ktds/ssms/article/dao/impl/sql/articleDAO.xml"/>
 		<mapper resource="com/ktds/ssms/member/dao/impl/sql/memberDAO.xml" />
+		<mapper resource="com/ktds/ssms/mobile/dao/impl/sql/mobileDAO.xml" />
 	</mappers>
 </configuration>

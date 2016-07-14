@@ -36,5 +36,10 @@
 			class="com.ktds.ssms.member.web.MemberController">
 			<property name="memberService" ref="memberService" />
 	</bean>
+	
+	<bean id="mobileController"
+			class="com.ktds.ssms.mobile.web.MobileController">
+			<property name="mobileService" ref="mobileService" />
+	</bean>
 
 </beans>

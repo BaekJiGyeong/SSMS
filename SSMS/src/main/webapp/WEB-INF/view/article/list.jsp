@@ -15,7 +15,7 @@
 		
 		<p>이 시스템을 이용하여 요양원 내의 환자 위치를 알 수 있습니다.</p>
 		<ul class="actions">
-			<li><a href="#" class="button">시작하기</a></li>
+			<li><a href="/SSMS/m/registerLocation" class="button">시작하기</a></li>
 		</ul>
 	</div>
 	
