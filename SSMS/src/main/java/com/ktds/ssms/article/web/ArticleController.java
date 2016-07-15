@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ktds.ssms.article.service.ArticleService;
@@ -44,14 +45,7 @@ public class ArticleController {
 	}
 	
 	@RequestMapping("/patientLoc")
-	public ModelAndView patientLoc() {
-		ModelAndView view = new ModelAndView();
-		view.setViewName("/article/patientLoc");
-		return view;
+	public ModelAndView patientLoc(@RequestParam(required=false, defaultValue="") String name) {		
+		return articleService.getPatientVOListByName(name);
 	}
-	
-	
-	
-	
-
 }
