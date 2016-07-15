@@ -37,5 +37,34 @@
 		WHERE	MBR_ID = #{id}
 		AND		PASSWORD = #{password}
 	</select>
+	
+	<select id="getNowTime" resultType="string">
+		SELECT	TO_CHAR(SYSDATE, 'YYYYMMDD')
+		FROM	DUAL
+	</select>
+	
+	<select	id="getCurrentSeq" resultType="string">
+		SELECT	LOGIN_LOG_ID_SEQ.NEXTVAL
+		FROM	DUAL
+	</select>
+	
+	<insert id="insertLoginLog" parameterType="LoginLogVO">
+		INSERT INTO LOGIN_LOG (
+								LOGIN_LOG_ID
+								, MBR_ID
+								, LOGIN_TIME
+							  )
+	    VALUES                (
+	    						#{logId}
+	    						, #{id}
+	    						, SYSDATE
+	    					  )
+	</insert>
+	
+	<select id="isExistId" parameterType="string" resultType="string">
+		SELECT	MBR_ID
+		FROM	MEMBER
+		WHERE	MBR_ID = #{id}
+	</select>
 
 </mapper>

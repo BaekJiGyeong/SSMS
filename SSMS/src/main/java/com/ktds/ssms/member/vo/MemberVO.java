@@ -2,7 +2,9 @@ package com.ktds.ssms.member.vo;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
-public class MemberVO {
+import com.ktds.ssms.article.vo.LocationVO;
+
+public class MemberVO extends LocationVO{
 
 	@NotEmpty(message = "필수 정보입니다.")
 	private String id;

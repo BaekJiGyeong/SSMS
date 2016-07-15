@@ -22,8 +22,8 @@ public class MobileController {
 	@ResponseBody
 	public void registerLocation(@Valid LocationLogVO locationLogVO){
 		
-		String locationId = "1";
-		String memberId = "test02";
+		String locationId = "3";
+		String memberId = "hskim";
 		
 		locationLogVO.setLocationId(locationId);
 		locationLogVO.setMemberId(memberId);

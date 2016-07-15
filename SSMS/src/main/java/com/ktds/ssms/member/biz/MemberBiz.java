@@ -10,4 +10,6 @@ public interface MemberBiz {
 
 	public boolean doLoginMember(MemberVO member, HttpSession session);
 
+	public boolean isExistId(String id);
+
 }

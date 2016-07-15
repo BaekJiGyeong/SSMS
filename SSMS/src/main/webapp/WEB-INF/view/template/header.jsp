@@ -33,10 +33,11 @@ Released   : 20140216
 
 </head>
 <body>
+<c:set value="${sessionScope._MEMBER_}" var="member" />
 <div id="wrapper">
 	<div id="header" class="container">
 		<div id="logo">
-			<h1><a href="#">SSMS</a></h1>
+			<h1><a href="/SSMS/list">SSMS</a></h1>
 		</div>
 		<div id="menu">
 			<ul id="ulMenu">
@@ -44,7 +45,12 @@ Released   : 20140216
 				<li ><a href="/SSMS/introduction" accesskey="2" title="">ABOUT US</a></li>
 				<li ><a href="/SSMS/patientLoc" accesskey="3" title="">patient LOCATION</a></li>
 				<li ><a href="/SSMS/mapGuide" accesskey="4" title="">MAP GUIDE</a></li>
-				<li ><a href="/SSMS/login" accesskey="5" title="">Login</a></li>
+				<c:if test="${ member.id eq null }">
+					<li ><a href="/SSMS/login" accesskey="5" title="">Login</a></li>
+				</c:if>
+				<c:if test="${ member.id ne null }">
+					<li ><a href="/SSMS/logout" accesskey="5" title="">Logout</a></li>
+				</c:if>
 			</ul>
 		</div>
 	</div>
