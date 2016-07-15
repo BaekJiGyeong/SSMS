@@ -1,12 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="<c:url value="/resources/js/jquery.min.js" />"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+	$("#searchNameBtn").click( function () {		
+		var name = $("#name").val();
+		alert(name);
+		
+		$("#nameForm").attr("action", "<c:url value='/patientLoc'/>");
+		$("#nameForm").attr("method", "POST");
+		$("#nameForm").submit();
+		
+	});
+});
+</script>
 <script>
-var canvas, context;
+	var canvas, context;
 	function InitEvent() {
 		var w = document.getElementById("w").value+"px";
 		var h = document.getElementById("h").value+"px";
@@ -34,7 +49,12 @@ var canvas, context;
 <div id="page" class="container" >
 	<div class="title" style="text-align: center;">
 		<h2>환자 위치 안내</h2><br/><br/>
-		<div  style="text-align: left; 
+		<form id="nameForm">
+		환자 성명 : <input type="text" id="name" name="name" value="${name}"/>
+		<input type="button" id="searchNameBtn" value="검색"/>
+		</form>
+		
+		<div  style="text-align: left; float:left; width:80%;
 					 height:500px;
 							background-image: url('resources/img/map.jpg'); background-repeat: no-repeat; background-position: center;">
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -42,10 +62,17 @@ var canvas, context;
 			<canvas id="square" width="110" height="200" >
 			</canvas>
 		</div >
-		
-		w : <input type="number" id="w" value="339">
-		h : <input type="number" id="h" value="100">
-		<input type="button" onclick="InitEvent()" value="입력"></input>
+		<div style="float:left; width:20%;">
+			<table>
+				<c:forEach items="${patientVOList}" var="patient">
+				<tr>
+					<td onclick="InitEvent()" style="cursor:pointer;">${patient.name} ${patient.birthday}</td>
+					<td><input type="hidden" id="w" value="${patient.marginLeft}"></td>
+					<td><input type="hidden" id="h" value="${patient.marginTop}"></td>
+				<tr>
+				</c:forEach>
+			</table>
+		</div>
 	</div>
 
 </body>
