@@ -17,8 +17,6 @@ public class ArticleController {
 
 	private ArticleService articleService;
 	
-	
-	
 	public void setArticleService(ArticleService articleService) {
 		this.articleService = articleService;
 	}
