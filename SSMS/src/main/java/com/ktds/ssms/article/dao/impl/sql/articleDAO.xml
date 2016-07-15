@@ -10,24 +10,28 @@
 				, BIRTHDAY birthday
 				, PHONE phoneNumber
 				, LOG.LOCATION_ID locationId
+				, LOG.TIME time
 				, BEACON_ID	beaconId
 				, MARGIN_LEFT marginLeft
 				, MARGIN_TOP marginTop
 		FROM    (
-		        SELECT  *
-		        FROM    LOCATION_LOG
-		        WHERE   MBR_ID IN (
-		                    SELECT	MBR_ID 
-		                    FROM	MEMBER
-		                    WHERE	MBR_NAME like '%' || #{name} || '%'
-		                    )
-		        ORDER   BY LOCATION_LOG_ID DESC
+				SELECT	*
+				FROM	(
+				        SELECT  *
+				        FROM    LOCATION_LOG
+				        WHERE   MBR_ID IN (
+				                    SELECT	MBR_ID 
+				                    FROM	MEMBER
+				                    WHERE	MBR_NAME like '%' || #{name} || '%'
+				                    )
+				        ORDER   BY LOCATION_LOG_ID DESC
+				        )
+				  WHERE	ROWNUM=1
 		        ) LOG
 		        , LOCATION
 		        , MEMBER
 		WHERE   LOG.LOCATION_ID = LOCATION.LOCATION_ID
 		AND     LOG.MBR_ID = MEMBER.MBR_ID
-		AND     ROWNUM=1
 	</select>
 	
 

@@ -29,7 +29,7 @@
 			if ( isCheckedId ) {
 				var form = $("#addMemberForm");
 				form.attr("method", "post");
-				form.attr("action", "<c:url value='/doRegisterMemberAction'/>");
+				form.attr("action", "/SSMS/doRegisterMemberAction");
 				form.submit();
 			}
 			else {
@@ -39,7 +39,7 @@
 	});
 </script>
 
-<form>
+<form id="addMemberForm">
 	아이디 : <input type="text" id="id" name="id" value="${ member.id }"><br/>
 	<span class="deleteMessageId" id="messageById"></span> <br/>
 
@@ -52,6 +52,6 @@
 	
 	핸드폰 번호 : <input type="text" id="phoneNumber" name="phoneNumber" value="${ member.phoneNumber }"><br/><br/>
 	
-	<input type="submit" id="addMember" value="가입"/>
+	<input type="button" id="addMember" value="가입"/>
 </form>
 

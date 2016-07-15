@@ -36,8 +36,8 @@ public class MemberController {
 	}
 	
 	@RequestMapping("/doRegisterMemberAction")
-	public ModelAndView doRegisterMemberAction(@Valid MemberVO member, Errors errors) {
-		return memberService.addNewMember(member, errors);
+	public ModelAndView doRegisterMemberAction(MemberVO member) {
+		return memberService.addNewMember(member);
 	}
 	
 	@RequestMapping("/doLogin")

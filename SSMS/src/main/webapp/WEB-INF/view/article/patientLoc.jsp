@@ -70,6 +70,9 @@ $(document).ready(function () {
 					<td><input type="hidden" id="w" value="${patient.marginLeft}"></td>
 					<td><input type="hidden" id="h" value="${patient.marginTop}"></td>
 				<tr>
+				<tr>
+					<td><span style="font-size: 11px;">${patient.time}</span></td>
+				</tr>
 				</c:forEach>
 			</table>
 		</div>

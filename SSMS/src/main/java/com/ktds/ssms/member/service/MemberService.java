@@ -12,7 +12,7 @@ public interface MemberService {
 
 	public ModelAndView registerMember();
 
-	public ModelAndView addNewMember(MemberVO member, Errors errors);
+	public ModelAndView addNewMember(MemberVO member);
 
 	public ModelAndView doLoginMember(MemberVO member, HttpSession session);
 

@@ -6,19 +6,14 @@ import com.ktds.ssms.article.vo.LocationVO;
 
 public class MemberVO extends LocationVO{
 
-	@NotEmpty(message = "필수 정보입니다.")
 	private String id;
 	
-	@NotEmpty(message = "필수 정보입니다.")
 	private String name;
 	
-	@NotEmpty(message = "필수 정보입니다.")
 	private String birthday;
 	
-	@NotEmpty(message = "필수 정보입니다.")
 	private String phoneNumber;
 	
-	@NotEmpty(message = "필수 정보입니다.")
 	private String password;
 	
 	private String salt;

@@ -32,11 +32,11 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public ModelAndView addNewMember(MemberVO member, Errors errors) {
+	public ModelAndView addNewMember(MemberVO member) {
 		
 		ModelAndView view = new ModelAndView();
 		
-		if ( errors.hasErrors()) {
+		if ( member == null ) {
 			
 			view.setViewName("member/registerMember");
 			view.addObject("member", member);
