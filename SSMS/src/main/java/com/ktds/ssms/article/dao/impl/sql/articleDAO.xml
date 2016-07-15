@@ -4,34 +4,41 @@
 
 <mapper namespace="ArticleDAO">
 
-	<select id="getPatientVOListByName" parameterType="string" resultType="MemberVO">
-		SELECT	LOG.MBR_ID id
-				, MBR_NAME name
-				, BIRTHDAY birthday
-				, PHONE phoneNumber
-				, LOG.LOCATION_ID locationId
-				, LOG.TIME time
-				, BEACON_ID	beaconId
-				, MARGIN_LEFT marginLeft
-				, MARGIN_TOP marginTop
+	<select id="getIdListByName" parameterType="string" resultType="string">
+		SELECT	MBR_ID
+		FROM	MEMBER
+		WHERE	MBR_NAME like '%' || #{name} || '%'
+	</select>
+	
+	<select id="getPatientInfoById" parameterType="string" resultType="MemberVO">
+		SELECT  MBR_ID ID
+		        , MBR_NAME name
+		        , BIRTHDAY birthday
+		        , PHONE phoneNumber
+		        , LOCATION_ID locationId
+		        , TIME time
+		        , BEACON_ID	beaconId
+		        , MARGIN_LEFT marginLeft
+		        , MARGIN_TOP marginTop
 		FROM    (
-				SELECT	*
-				FROM	(
-				        SELECT  *
-				        FROM    LOCATION_LOG
-				        WHERE   MBR_ID IN (
-				                    SELECT	MBR_ID 
-				                    FROM	MEMBER
-				                    WHERE	MBR_NAME like '%' || #{name} || '%'
-				                    )
-				        ORDER   BY LOCATION_LOG_ID DESC
-				        )
-				  WHERE	ROWNUM=1
-		        ) LOG
-		        , LOCATION
-		        , MEMBER
-		WHERE   LOG.LOCATION_ID = LOCATION.LOCATION_ID
-		AND     LOG.MBR_ID = MEMBER.MBR_ID
+		            SELECT	M.MBR_ID
+		                    , MBR_NAME
+		                    , BIRTHDAY
+		                    , PHONE
+		                    , LL.LOCATION_ID
+		                    , TIME
+		                    , BEACON_ID
+		                    , MARGIN_LEFT
+		                    , MARGIN_TOP
+		            FROM    MEMBER M
+		                    , LOCATION L
+		                    , LOCATION_LOG LL
+		            WHERE   M.MBR_ID = LL.MBR_ID
+		            AND     LL.LOCATION_ID = L.LOCATION_ID
+		            AND     M.MBR_ID = #{id}
+		            ORDER   BY LL.LOCATION_LOG_ID DESC
+		        )
+		WHERE   ROWNUM=1
 	</select>
 	
 

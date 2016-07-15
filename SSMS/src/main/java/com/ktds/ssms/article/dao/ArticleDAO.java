@@ -5,7 +5,9 @@ import java.util.List;
 import com.ktds.ssms.member.vo.MemberVO;
 
 public interface ArticleDAO {
+	
+	public List<String> getIdListByName(String name);
 
-	public List<MemberVO> getPatientVOListByName(String name);
+	public MemberVO getPatientInfoById(String id);
 
 }

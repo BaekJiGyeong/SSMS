@@ -11,11 +11,25 @@
 $(document).ready(function () {
 	$("#searchNameBtn").click( function () {		
 		var name = $("#name").val();
-		alert(name);
-		
+
 		$("#nameForm").attr("action", "<c:url value='/patientLoc'/>");
 		$("#nameForm").attr("method", "POST");
 		$("#nameForm").submit();
+		
+	});
+	$(".paintBtn").click(function(){
+		var w = $(this).parent().children(":eq(1)").children(":eq(0)").val()+"px";	
+		var h = $(this).parent().children(":eq(2)").children(":eq(0)").val()+"px";
+		
+		canvas = document.getElementById("square");
+		context = canvas.getContext("2d");
+		
+		context.fillStyle="#FF0000";
+		context.fillRect(27, 27, 80, 113); // 속이 꽉찬 사각형
+		context.clearRect(32, 32, 69, 102); // 지정한 영역을 투명하게 만들어준다.
+	
+		canvas.style.marginLeft = w;
+		canvas.style.marginTop = h;
 		
 	});
 });
@@ -66,7 +80,7 @@ $(document).ready(function () {
 			<table>
 				<c:forEach items="${patientVOList}" var="patient">
 				<tr>
-					<td onclick="InitEvent()" style="cursor:pointer;">${patient.name} ${patient.birthday}</td>
+					<td class="paintBtn" style="cursor:pointer;">${patient.name} ${patient.birthday}</td>
 					<td><input type="hidden" id="w" value="${patient.marginLeft}"></td>
 					<td><input type="hidden" id="h" value="${patient.marginTop}"></td>
 				<tr>
