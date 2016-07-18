@@ -20,6 +20,7 @@ Released   : 20140216
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" />
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css" />
 
 <script type="text/javascript" src="<c:url value="/resources/js/jquery.min.js" />"></script>
 <script type="text/javascript">

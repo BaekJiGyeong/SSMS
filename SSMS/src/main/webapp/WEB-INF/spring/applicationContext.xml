@@ -8,6 +8,33 @@
 	<mvc:annotation-driven />
 	<mvc:resources location="/WEB-INF/resources/" mapping="/resources/**" />
 	
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<!-- 모든 페이지에서 세션이 끊겨 있으면 root로 이동 -->
+			<mvc:mapping path="/**" />
+			<mvc:exclude-mapping path="/" />
+			<mvc:exclude-mapping path="/login" />
+			<mvc:exclude-mapping path="/loginPage" />
+			<mvc:exclude-mapping path="/register" />
+			<mvc:exclude-mapping path="/doLogin"/>
+			<mvc:exclude-mapping path="/checkValidationById" />
+			<mvc:exclude-mapping path="/checkValidationByName" />
+			<mvc:exclude-mapping path="/checkValidationByPassword" />
+			<mvc:exclude-mapping path="/checkValidationByPhoneNumber" />
+			<mvc:exclude-mapping path="/doRegisterMemberAction" />
+			<mvc:exclude-mapping path="/changePassword/*" />
+			<mvc:exclude-mapping path="/doChangePasswordAction" />
+			<mvc:exclude-mapping path="/checkPassword" />
+			<mvc:exclude-mapping path="/fabicon.ico" />
+			<mvc:exclude-mapping path="/resources/**" />
+			<bean id="sessionCheckInterceptor" class="com.ktds.ssms.interceptor.SessionCheckInterceptor" />
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<!-- 로그인 시 권한 없으면 페이지 접근 불가 -->
+			<mvc:mapping path="/login" />
+			<bean id="loginCheckInterceptor" class="com.ktds.ssms.interceptor.LoginCheckInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
 	
 	<!-- RequestDispatcher. forward("member/login/login.jsp") -->
 	<bean id="viewResolver"

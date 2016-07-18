@@ -18,8 +18,8 @@ $(document).ready(function () {
 		
 	});
 	$(".paintBtn").click(function(){
-		var w = $(this).parent().children(":eq(1)").children(":eq(0)").val()+"px";	
-		var h = $(this).parent().children(":eq(2)").children(":eq(0)").val()+"px";
+		var w = $(this).parent().children(":eq(2)").children(":eq(0)").val()+"px";	
+		var h = $(this).parent().children(":eq(3)").children(":eq(0)").val()+"px";
 		
 		canvas = document.getElementById("square");
 		context = canvas.getContext("2d");
@@ -58,7 +58,7 @@ $(document).ready(function () {
 	}
 </style>
 </head>
-<body>
+<body class="w3-container">
 
 <div id="page" class="container" >
 	<div class="title" style="text-align: center;">
@@ -68,7 +68,7 @@ $(document).ready(function () {
 		<input type="button" id="searchNameBtn" value="검색"/>
 		</form>
 		
-		<div  style="text-align: left; float:left; width:80%;
+		<div  style="text-align: left; float:left; width:70%;
 					 height:500px;
 							background-image: url('resources/img/map.jpg'); background-repeat: no-repeat; background-position: center;">
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -76,17 +76,22 @@ $(document).ready(function () {
 			<canvas id="square" width="110" height="200" >
 			</canvas>
 		</div >
-		<div style="float:left; width:20%;">
-			<table>
+		<div style="float:left; width:30%;">
+			<table class="w3-table w3-striped w3-bordered w3-card-4">
 				<c:forEach items="${patientVOList}" var="patient">
-				<tr>
-					<td class="paintBtn" style="cursor:pointer;">${patient.name} ${patient.birthday}</td>
-					<td><input type="hidden" id="w" value="${patient.marginLeft}"></td>
-					<td><input type="hidden" id="h" value="${patient.marginTop}"></td>
-				</tr>
-				<tr>
-					<td><span style="font-size: 11px;">${patient.time}</span></td>
-				</tr>
+				<thead>
+					<tr class="w3-green">
+						<th style="width:150px;">이름/생년 월일</th>
+						<th colspan="3">입실 시간</th>
+						
+					</tr>
+				</thead>
+					<tr>
+						<td class="paintBtn" style="cursor:pointer;">${patient.name}<br/> ${patient.birthday}</td>
+						<td><span style="font-size: 11px;">${patient.time}</span></td>
+						<td><input type="hidden" id="w" value="${patient.marginLeft}"></td>
+						<td><input type="hidden" id="h" value="${patient.marginTop}"></td>
+					</tr>
 				</c:forEach>
 			</table>
 		</div>

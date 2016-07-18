@@ -18,41 +18,39 @@ import com.ktds.ssms.member.vo.MemberVO;
 @Controller
 public class MemberController {
 
-	private Logger logger = LoggerFactory.getLogger(MemberController.class);
-	private MemberService memberService;
+   private Logger logger = LoggerFactory.getLogger(MemberController.class);
+   private MemberService memberService;
 
-	public void setMemberService(MemberService memberService) {
-		this.memberService = memberService;
-	}
-	
-	@RequestMapping("/login")
-	public String viewLoginPage() {
-		return "common/login";
-	}
-	
-	@RequestMapping("/register")
-	public ModelAndView ViewRegisterMemberPage() {
-		return memberService.registerMember();
-	}
-	
-	@RequestMapping("/doRegisterMemberAction")
-	public ModelAndView doRegisterMemberAction(MemberVO member) {
-		return memberService.addNewMember(member);
-	}
-	
-	@RequestMapping("/doLogin")
-	public ModelAndView doLoginMember(MemberVO member, HttpSession session) {
-		return memberService.doLoginMember(member, session);
-	}
-	
-	@RequestMapping("/logout")
-	public String doLogoutMember(HttpSession session) {
-		return memberService.doLogoutMember(session);
-	}
-	
-	@RequestMapping("/checkValidationById")
-	public void checkValidationById(@RequestParam String id, HttpServletResponse response) {
-		memberService.checkValidationById(id, response);
-	}
-	
+   public void setMemberService(MemberService memberService) {
+      this.memberService = memberService;
+   }
+   
+   @RequestMapping("/login")
+   public String viewLoginPage() {
+      return "common/login";
+   }
+   @RequestMapping("/register")
+   public ModelAndView ViewRegisterMemberPage() {
+      return memberService.registerMember();
+   }
+   
+   @RequestMapping("/doRegisterMemberAction")
+   public ModelAndView doRegisterMemberAction(MemberVO member) {
+      return memberService.addNewMember(member);
+   }
+   
+   @RequestMapping("/doLogin")
+   public ModelAndView doLoginMember(MemberVO member, HttpSession session) {
+      return memberService.doLoginMember(member, session);
+   }
+   @RequestMapping("/logout")
+   public String doLogoutMember(HttpSession session) {
+      return memberService.doLogoutMember(session);
+   }
+   
+   @RequestMapping("/checkValidationById")
+   public void checkValidationById(@RequestParam String id, HttpServletResponse response) {
+      memberService.checkValidationById(id, response);
+   }
+   
 }
