@@ -78,7 +78,6 @@ $(document).ready(function () {
 		</div >
 		<div style="float:left; width:30%;">
 			<table class="w3-table w3-striped w3-bordered w3-card-4">
-				<c:forEach items="${patientVOList}" var="patient">
 				<thead>
 					<tr class="w3-green">
 						<th style="width:150px;">이름/생년 월일</th>
@@ -86,6 +85,7 @@ $(document).ready(function () {
 						
 					</tr>
 				</thead>
+				<c:forEach items="${patientVOList}" var="patient">
 					<tr>
 						<td class="paintBtn" style="cursor:pointer;">${patient.name}<br/> ${patient.birthday}</td>
 						<td><span style="font-size: 11px;">${patient.time}</span></td>
