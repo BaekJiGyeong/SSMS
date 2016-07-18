@@ -83,7 +83,7 @@ $(document).ready(function () {
 					<td class="paintBtn" style="cursor:pointer;">${patient.name} ${patient.birthday}</td>
 					<td><input type="hidden" id="w" value="${patient.marginLeft}"></td>
 					<td><input type="hidden" id="h" value="${patient.marginTop}"></td>
-				<tr>
+				</tr>
 				<tr>
 					<td><span style="font-size: 11px;">${patient.time}</span></td>
 				</tr>

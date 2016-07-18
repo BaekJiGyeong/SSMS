@@ -26,6 +26,10 @@ public class ArticleBizImpl implements ArticleBiz {
 		// name이 포함된 멤버들 id list를 가져온다.
 		List<String> idList = articleDAO.getIdListByName(name);
 		
+		for (String id : idList) {
+			System.out.println(id);
+		}
+		
 		List<MemberVO> patientInfoList = new ArrayList<MemberVO>();
 		MemberVO patientInfo = null;
 		// id list for문 돌려서 각각 정보를 가져온다.
