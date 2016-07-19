@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<mvc:annotation-driven />
+	<mvc:resources location="/WEB-INF/resources/" mapping="/resources/**" />
+	
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<!-- 모든 페이지에서 세션이 끊겨 있으면 root로 이동 -->
+			<mvc:mapping path="/**" />
+			<mvc:exclude-mapping path="/" />
+			<mvc:exclude-mapping path="/login" />
+			<mvc:exclude-mapping path="/loginPage" />
+			<mvc:exclude-mapping path="/register" />
+			<mvc:exclude-mapping path="/doLogin"/>
+			<mvc:exclude-mapping path="/checkValidationById" />
+			<mvc:exclude-mapping path="/checkValidationByName" />
+			<mvc:exclude-mapping path="/checkValidationByPassword" />
+			<mvc:exclude-mapping path="/checkValidationByPhoneNumber" />
+			<mvc:exclude-mapping path="/doRegisterMemberAction" />
+			<mvc:exclude-mapping path="/changePassword/*" />
+			<mvc:exclude-mapping path="/doChangePasswordAction" />
+			<mvc:exclude-mapping path="/checkPassword" />
+			<mvc:exclude-mapping path="/fabicon.ico" />
+			<mvc:exclude-mapping path="/resources/**" />
+			<bean id="sessionCheckInterceptor" class="com.ktds.ssms.interceptor.SessionCheckInterceptor" />
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<!-- 로그인 시 권한 없으면 페이지 접근 불가 -->
+			<mvc:mapping path="/login" />
+			<bean id="loginCheckInterceptor" class="com.ktds.ssms.interceptor.LoginCheckInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
+	
+	<!-- RequestDispatcher. forward("member/login/login.jsp") -->
+	<bean id="viewResolver"
+			class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+			
+		<property name="prefix" value="/WEB-INF/view/" />
+		<property name="suffix" value=".jsp" />		
+	</bean>
+	
+	<bean id="multipartResolver"
+			class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="104857600"/>
+		<property name="defaultEncoding" value="UTF-8"/>		
+	</bean>
+	
+	
+	<bean id="validator"
+			class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"/>
+
+	<bean id="articleController"
+			class="com.ktds.ssms.article.web.ArticleController">
+		<property name="articleService" ref="articleService"/>
+	</bean>
+	
+	<bean id="memberController"
+			class="com.ktds.ssms.member.web.MemberController">
+			<property name="memberService" ref="memberService" />
+	</bean>
+	
+	<bean id="mobileController"
+			class="com.ktds.ssms.mobile.web.MobileController">
+			<property name="mobileService" ref="mobileService" />
+	</bean>
+	
+	<bean id="mobileMemberController"
+			class="com.ktds.ssms.mobile.web.MemberController">
+			<property name="memberService" ref="memberService" />
+	</bean>
+
+</beans>

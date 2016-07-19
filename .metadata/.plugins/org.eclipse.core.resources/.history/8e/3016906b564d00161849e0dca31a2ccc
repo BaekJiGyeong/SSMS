@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "=//mybatis.org//DTD Mapper 3.0//EN"
+					"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MemberDAO">
+
+	<insert id="addNewMember" parameterType="MemberVO">
+		INSERT INTO MEMBER (
+   								MBR_ID
+   								, MBR_NAME
+   								, BIRTHDAY
+   								, PHONE
+   								, SALT
+   								, PASSWORD
+   							) 
+		VALUES 				( 	#{id}
+								, #{name}
+								, #{birthday}
+								, #{phoneNumber}
+								, #{salt}
+								, #{password}
+							)
+	</insert>
+	
+	<select id="getSaltById" parameterType="string" resultType="string">
+		SELECT	SALT salt
+		FROM	MEMBER
+		WHERE	MBR_ID = #{id}
+	</select>
+	
+	<select id="doLoginMember" parameterType="MemberVO" resultType="MemberVO">
+		SELECT	MBR_ID id
+				, MBR_NAME name
+				, BIRTHDAY birthday
+				, PHONE phoneNumber
+				, IS_ADMIN isAdmin
+		FROM	MEMBER
+		WHERE	MBR_ID = #{id}
+		AND		PASSWORD = #{password}
+	</select>
+	
+	<select id="getNowTime" resultType="string">
+		SELECT	TO_CHAR(SYSDATE, 'YYYYMMDD')
+		FROM	DUAL
+	</select>
+	
+	<select	id="getCurrentSeq" resultType="string">
+		SELECT	LOGIN_LOG_ID_SEQ.NEXTVAL
+		FROM	DUAL
+	</select>
+	
+	<insert id="insertLoginLog" parameterType="LoginLogVO">
+		INSERT INTO LOGIN_LOG (
+								LOGIN_LOG_ID
+								, MBR_ID
+								, LOGIN_TIME
+							  )
+	    VALUES                (
+	    						#{logId}
+	    						, #{id}
+	    						, SYSDATE
+	    					  )
+	</insert>
+	
+	<select id="isExistId" parameterType="string" resultType="string">
+		SELECT	MBR_ID
+		FROM	MEMBER
+		WHERE	MBR_ID = #{id}
+	</select>
+
+</mapper>

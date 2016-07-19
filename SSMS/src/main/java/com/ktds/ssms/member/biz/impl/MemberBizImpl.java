@@ -32,10 +32,18 @@ public class MemberBizImpl implements MemberBiz{
 	@Override
 	public boolean doLoginMember(MemberVO member, HttpSession session) {
 		
-		// SALT 값 가져와 입력한 암호 암호화 처리
-		String memberSalt = memberDAO.getSaltById(member.getId());
-		String saltPassword = SHA256Util.getEncrypt(member.getPassword(), memberSalt);
-		member.setPassword(saltPassword);
+		// 존재하는 ID인지 먼저 확인
+		boolean idCheck = memberDAO.isExistId(member.getId()) != null;
+		
+		if ( idCheck ) {
+			// SALT 값 가져와 입력한 암호 암호화 처리
+			String memberSalt = memberDAO.getSaltById(member.getId());
+			String saltPassword = SHA256Util.getEncrypt(member.getPassword(), memberSalt);
+			member.setPassword(saltPassword);
+		}
+		else {
+			return false;
+		}
 		
 		// 로그인 처리
 		MemberVO loginMember = memberDAO.doLoginMember(member);

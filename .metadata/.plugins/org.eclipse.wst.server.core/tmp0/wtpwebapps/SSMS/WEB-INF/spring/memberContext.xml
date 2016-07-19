@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<bean id="memberDAO" class="com.ktds.ssms.member.dao.impl.MemberDAOImpl">
+		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
+	</bean>
+	
+	<bean id="memberBiz" class="com.ktds.ssms.member.biz.impl.MemberBizImpl">
+		<property name="memberDAO" ref="memberDAO" />
+	</bean>
+	
+	<bean id="memberService" class="com.ktds.ssms.member.service.impl.MemberServiceImpl">
+		<property name="memberBiz" ref="memberBiz"/>
+	</bean>
+</beans>
+
