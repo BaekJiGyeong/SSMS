@@ -480,3 +480,9 @@ java.net.UnknownHostException: www.codetrails.com
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2016-07-19 13:35:46.120
 !MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-07-19 14:02:54.111
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2016-07-19 14:02:54.122
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
