@@ -28,28 +28,29 @@ public class MemberController {
 		this.memberService = memberService;
 	}
 	
-	@RequestMapping("/m/login")
-	@ResponseBody
-	public Map<String, String> login(@Valid MemberVO memberVO, Errors errors, HttpSession session, HttpServletRequest request) {
-		
-		ModelAndView mav = memberService.doLoginMember(memberVO, session);
-		
-		Map<String , String> result = new HashMap<String, String>();
-	
-		boolean loginResult = true;
-		if(mav == null ){
-			loginResult = false;
-		}
-		result.put("result", loginResult+"");
-		
-		if(mav != null ){
-			result.put("message", "로그인을 성공했습니다.");
-			result.put("sessionId", session.getId()+"");
-		}
-		else  {
-			result.put("message", "로그인에 실패하였습니다.");
-		}
-		return result;
-	}
+	   @RequestMapping("/m/login")
+	   @ResponseBody
+	   public Map<String, String> login(@Valid MemberVO memberVO, Errors errors, HttpSession session, HttpServletRequest request) {
+	      
+	      ModelAndView mav = memberService.doLoginMember(memberVO, session);
+	      
+	      Map<String , String> result = new HashMap<String, String>();
+	   
+	      boolean loginResult = true;
+	      if( mav.getViewName().equals("redirect:/login?loginFail=Y") ){
+	         // 로그인 실패
+	         loginResult = false;
+	         result.put("message", "로그인에 실패하였습니다.");
+	      }
+	      else {
+	         // 로그인 성공
+	         result.put("message", "로그인을 성공했습니다.");
+	         result.put("sessionId", session.getId()+"");
+	      }
+	      
+	      result.put("result", loginResult+"");
+	      
+	      return result;
+	   }
 	
 }

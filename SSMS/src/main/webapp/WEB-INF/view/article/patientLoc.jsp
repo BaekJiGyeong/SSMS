@@ -28,8 +28,8 @@ $(document).ready(function () {
 		context.fillRect(27, 27, 80, 113); // 속이 꽉찬 사각형
 		context.clearRect(32, 32, 69, 102); // 지정한 영역을 투명하게 만들어준다.
 	
-		canvas.style.marginLeft = w;
-		canvas.style.marginTop = h;
+		canvas.style.marginLeft = "50%";
+		canvas.style.marginTop = "50%";
 		
 	});
 });
@@ -68,8 +68,7 @@ $(document).ready(function () {
 		<input type="button" id="searchNameBtn" value="검색"/>
 		</form>
 		
-		<div  style="text-align: left; float:left; width:70%;
-					 height:500px;
+		<div  style="text-align: left; float:left; width:70%; height:500px;
 							background-image: url('resources/img/map.jpg'); background-repeat: no-repeat; background-position: center;">
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<!-- <img src="resources/img/map.jpg" style="width:800px;height:500px;"> -->
@@ -80,8 +79,8 @@ $(document).ready(function () {
 			<table class="w3-table w3-striped w3-bordered w3-card-4">
 				<thead>
 					<tr class="w3-green">
-						<th style="width:150px;">이름/생년 월일</th>
-						<th colspan="3">입실 시간</th>
+						<th style="width:150px; text-align:center">이름/생년 월일</th>
+						<th colspan="3" style="text-align:center">입실 시간</th>
 						
 					</tr>
 				</thead>
