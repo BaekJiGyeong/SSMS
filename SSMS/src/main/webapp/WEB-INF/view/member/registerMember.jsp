@@ -38,7 +38,10 @@
 		});
 	});
 </script>
-
+<div style="margin-left:500px;">
+<br/>
+<br/>
+<br/>
 <form id="addMemberForm">
 	아이디 : <input type="text" id="id" name="id" value="${ member.id }"><br/>
 	<span class="deleteMessageId" id="messageById"></span> <br/>
@@ -54,4 +57,4 @@
 	
 	<input type="button" id="addMember" value="가입"/>
 </form>
-
+</div>

@@ -54,18 +54,15 @@ Released   : 20140216
 				</c:if>
 			</ul>
 		</div>
-	</div>
-	<div id="banner" style="background-image: url(resources/img/banner.jpg);">&nbsp;</div>
-	<div id="featured">
-		<div class="container">
+		</div>
+		</div>
+		<div id="featured">
 			<div class="title">
 				<h2>Smart Sanatorium Management System</h2>
-				<span class="byline">Smart Sanatorium Management System</span> 
+				<span class="byline">고객을 최우선으로!</span>
 			</div>
 	
 		</div>
-	</div>
 	
-<div id="page" class="container">
 		
 	

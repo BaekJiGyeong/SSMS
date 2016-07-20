@@ -28,8 +28,8 @@ $(document).ready(function () {
 		context.fillRect(27, 27, 80, 113); // 속이 꽉찬 사각형
 		context.clearRect(32, 32, 69, 102); // 지정한 영역을 투명하게 만들어준다.
 	
-		canvas.style.marginLeft = "50%";
-		canvas.style.marginTop = "50%";
+		canvas.style.marginLeft = w;
+		canvas.style.marginTop = h;
 		
 	});
 });
@@ -60,7 +60,7 @@ $(document).ready(function () {
 </head>
 <body class="w3-container">
 
-<div id="page" class="container" >
+<div id="page" class="container" style="background-color:white;">
 	<div class="title" style="text-align: center;">
 		<h2>환자 위치 안내</h2><br/><br/>
 		<form id="nameForm">
@@ -78,9 +78,9 @@ $(document).ready(function () {
 		<div style="float:left; width:30%;">
 			<table class="w3-table w3-striped w3-bordered w3-card-4">
 				<thead>
-					<tr class="w3-green">
-						<th style="width:150px; text-align:center">이름/생년 월일</th>
-						<th colspan="3" style="text-align:center">입실 시간</th>
+					<tr class="w3-" style="background-color:#79C255; ">
+						<th style="width:150px; text-align:center; color:white;">이름/생년 월일</th>
+						<th colspan="3" style="text-align:center; color:white;">입실 시간</th>
 						
 					</tr>
 				</thead>

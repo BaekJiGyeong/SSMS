@@ -44,11 +44,16 @@ $(document).ready(function(){
 });
 </script>
 
-<div class="login">
+<div class="login" style="margin-left:500px;text-align:center">
 	<div class="wrapper">
+	&nbsp;
 		<form id="loginForm" name="loginForm">
+		
 			<input type="text" name="id" id="id" placeholder="ID" tabindex="1" />
 			<input type="password" name="password" id="password" placeholder="Password" tabindex="2" />
+			<br/>
+			&nbsp;
+			<br/>
 			<span class="button loginButton" style="cursor: pointer;" tabindex="3" >Login</span>
 			<span class="button registButton" style="cursor: pointer;" tabindex="4" >Sign Up</span>
 		</form>

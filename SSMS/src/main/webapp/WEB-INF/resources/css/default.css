@@ -7,7 +7,6 @@
 	{
 		margin: 0px;
 		padding: 0px;
-		background: #79C255;
 		font-family: 'Montserrat', sans-serif;
 		font-size: 11pt;
 		font-weight: 200;
@@ -394,7 +393,7 @@
 	#banner
 	{
 		overflow: hidden;
-		padding: 10em 0em;
+		padding: 10em 0em ;
 		background-image: url(resources/img/banner.jpg);
 		background-size: cover;
 		text-align: center;
