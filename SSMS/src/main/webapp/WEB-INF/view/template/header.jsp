@@ -38,7 +38,7 @@ Released   : 20140216
 <div id="wrapper">
 	<div id="header" class="container">
 		<div id="logo">
-			<h1><a href="/SSMS/list">SSMS</a></h1>
+			<h1><a href="/SSMS/list"><font color="#ff751a">S2</font>MS</a></h1>
 		</div>
 		<div id="menu">
 			<ul id="ulMenu">
