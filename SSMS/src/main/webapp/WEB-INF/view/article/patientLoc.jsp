@@ -31,7 +31,7 @@ $(document).ready(function () {
 		var l8 = $(this).parent().children(":eq(3)").children(":eq(8)").val() +"호실  "+ $(this).parent().children(":eq(3)").children(":eq(18)").val();
 		var l9 = $(this).parent().children(":eq(3)").children(":eq(9)").val() +"호실  "+ $(this).parent().children(":eq(3)").children(":eq(19)").val();
 		var l10 = $(this).parent().children(":eq(3)").children(":eq(10)").val() +"호실  "+ $(this).parent().children(":eq(3)").children(":eq(20)").val();
-
+		
 		var patientName = $(this).children(":eq(0)").text()+ " 님 위치";
 		
 
@@ -92,13 +92,12 @@ $(document).ready(function () {
 		<h2>환자 위치 안내</h2><br/><br/>
 		<form id="nameForm">
 		환자 성명 : <input type="text" id="name" name="name" value="${name}"/>
-		<input type="button" id="searchNameBtn" value="검색"/>
+		 <button type="button" class="btn btn-success" id="searchNameBtn">검색</button>
 		</form>
 		
 		<div  style="text-align: left; float:left; width:70%; height:500px;
 							background-image: url('resources/img/map.jpg'); background-repeat: no-repeat; background-position: center;">
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<!-- <img src="resources/img/map.jpg" style="width:800px;height:500px;"> -->
 			<canvas id="square" width="110" height="200" >
 			</canvas>
 		</div >

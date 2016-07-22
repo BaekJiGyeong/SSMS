@@ -22,6 +22,10 @@ Released   : 20140216
 <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" />
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css" />
 
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
 <script type="text/javascript" src="<c:url value="/resources/js/jquery.min.js" />"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
