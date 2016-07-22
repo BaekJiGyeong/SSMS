@@ -9,7 +9,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.ktds.ssms.article.service.ArticleService;
 
-
 @Controller
 public class ArticleController {
 	

@@ -5,6 +5,7 @@ import java.util.List;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 
 import com.ktds.ssms.article.dao.ArticleDAO;
+import com.ktds.ssms.article.vo.LocationVO;
 import com.ktds.ssms.member.vo.MemberVO;
 
 public class ArticleDAOImpl extends SqlSessionDaoSupport implements ArticleDAO{
@@ -18,5 +19,10 @@ public class ArticleDAOImpl extends SqlSessionDaoSupport implements ArticleDAO{
 	   public MemberVO getPatientInfoById(String id) {
 	      return getSqlSession().selectOne("ArticleDAO.getPatientInfoById", id);
 	   }
+
+	@Override
+	public List<LocationVO> getLocationVOListById(String id) {
+		return getSqlSession().selectList("ArticleDAO.getLocationVOListById", id);
+	}
 	
 }

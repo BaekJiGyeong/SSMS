@@ -21,6 +21,20 @@ $(document).ready(function () {
 		var w = $(this).parent().children(":eq(2)").children(":eq(0)").val()+"px";	
 		var h = $(this).parent().children(":eq(3)").children(":eq(0)").val()+"px";
 		
+		var l1 = $(this).parent().children(":eq(3)").children(":eq(1)").val() +"호실  "+ $(this).parent().children(":eq(3)").children(":eq(11)").val();
+		var l2 = $(this).parent().children(":eq(3)").children(":eq(2)").val() +"호실  "+ $(this).parent().children(":eq(3)").children(":eq(12)").val();
+		var l3 = $(this).parent().children(":eq(3)").children(":eq(3)").val() +"호실  "+ $(this).parent().children(":eq(3)").children(":eq(13)").val();
+		var l4 = $(this).parent().children(":eq(3)").children(":eq(4)").val() +"호실  "+ $(this).parent().children(":eq(3)").children(":eq(14)").val();
+		var l5 = $(this).parent().children(":eq(3)").children(":eq(5)").val() +"호실  "+ $(this).parent().children(":eq(3)").children(":eq(15)").val();
+		var l6 = $(this).parent().children(":eq(3)").children(":eq(6)").val() +"호실  "+ $(this).parent().children(":eq(3)").children(":eq(16)").val();
+		var l7 = $(this).parent().children(":eq(3)").children(":eq(7)").val() +"호실  "+ $(this).parent().children(":eq(3)").children(":eq(17)").val();
+		var l8 = $(this).parent().children(":eq(3)").children(":eq(8)").val() +"호실  "+ $(this).parent().children(":eq(3)").children(":eq(18)").val();
+		var l9 = $(this).parent().children(":eq(3)").children(":eq(9)").val() +"호실  "+ $(this).parent().children(":eq(3)").children(":eq(19)").val();
+		var l10 = $(this).parent().children(":eq(3)").children(":eq(10)").val() +"호실  "+ $(this).parent().children(":eq(3)").children(":eq(20)").val();
+
+		var patientName = $(this).children(":eq(0)").text()+ " 님 위치";
+		
+
 		canvas = document.getElementById("square");
 		context = canvas.getContext("2d");
 		
@@ -30,6 +44,19 @@ $(document).ready(function () {
 	
 		canvas.style.marginLeft = w;
 		canvas.style.marginTop = h;
+
+		$("#p1").text(l1);
+		$("#p2").text(l2);
+		$("#p3").text(l3);
+		$("#p4").text(l4);
+		$("#p5").text(l5);
+		$("#p6").text(l6);
+		$("#p7").text(l7);
+		$("#p8").text(l8);
+		$("#p9").text(l9);
+		$("#p10").text(l10);
+		
+		$("#patientName").text(patientName);
 		
 	});
 });
@@ -76,6 +103,7 @@ $(document).ready(function () {
 			</canvas>
 		</div >
 		<div style="float:left; width:30%;">
+		
 			<table class="w3-table w3-striped w3-bordered w3-card-4">
 				<thead>
 					<tr class="w3-" style="background-color:#79C255; ">
@@ -85,14 +113,55 @@ $(document).ready(function () {
 					</tr>
 				</thead>
 				<c:forEach items="${patientVOList}" var="patient">
-					<tr>
-						<td class="paintBtn" style="cursor:pointer;">${patient.name}<br/> ${patient.birthday}</td>
+					<tr style="margin:0px;">
+						<td class="paintBtn" style="cursor:pointer;"><p>${patient.name}</p>${patient.birthday}</td>
 						<td><span style="font-size: 11px;">${patient.time}</span></td>
 						<td><input type="hidden" id="w" value="${patient.marginLeft}"></td>
-						<td><input type="hidden" id="h" value="${patient.marginTop}"></td>
+						<td><input type="hidden" id="h" value="${patient.marginTop}">
+						<input type="hidden" id="l1" style="width:1px;" value="${patient.locationList[0].locationId}">
+						<input type="hidden" id="l2" style="width:1px;" value="${patient.locationList[1].locationId}">
+						<input type="hidden" id="l3" style="width:1px;" value="${patient.locationList[2].locationId}">
+						<input type="hidden" id="l4" style="width:1px;" value="${patient.locationList[3].locationId}">
+						<input type="hidden" id="l5" style="width:1px;" value="${patient.locationList[4].locationId}">
+						<input type="hidden" id="l6" style="width:1px;" value="${patient.locationList[5].locationId}">
+						<input type="hidden" id="l7" style="width:1px;" value="${patient.locationList[6].locationId}">
+						<input type="hidden" id="l8" style="width:1px;" value="${patient.locationList[7].locationId}">
+						<input type="hidden" id="l9" style="width:1px;" value="${patient.locationList[8].locationId}">
+						<input type="hidden" id="l10" style="width:1px;" value="${patient.locationList[9].locationId}">
+						
+						<input type="hidden" id="t1" style="width:1px;" value="${patient.locationList[0].time}">
+						<input type="hidden" id="t2" style="width:1px;" value="${patient.locationList[1].time}">
+						<input type="hidden" id="t3" style="width:1px;" value="${patient.locationList[2].time}">
+						<input type="hidden" id="t4" style="width:1px;" value="${patient.locationList[3].time}">
+						<input type="hidden" id="t5" style="width:1px;" value="${patient.locationList[4].time}">
+						<input type="hidden" id="t6" style="width:1px;" value="${patient.locationList[5].time}">
+						<input type="hidden" id="t7" style="width:1px;" value="${patient.locationList[6].time}">
+						<input type="hidden" id="t8" style="width:1px;" value="${patient.locationList[7].time}">
+						<input type="hidden" id="t9" style="width:1px;" value="${patient.locationList[8].time}">
+						<input type="hidden" id="t10" style="width:1px;" value="${patient.locationList[9].time}">
+						</td>																	
 					</tr>
+					
 				</c:forEach>
 			</table>
+			
+			<br/><br/>
+			
+			<div>
+		<p id="patientName"></p>
+				<p id="p1" ></p>
+				<p id="p2" ></p>
+				<p id="p3" ></p>
+				<p id="p4" ></p>
+				<p id="p5" ></p>
+				<p id="p6" ></p>
+				<p id="p7" ></p>
+				<p id="p8" ></p>
+				<p id="p9" ></p>
+				<p id="p10" ></p>
+				
+			</div>
+			
 		</div>
 	</div>
 

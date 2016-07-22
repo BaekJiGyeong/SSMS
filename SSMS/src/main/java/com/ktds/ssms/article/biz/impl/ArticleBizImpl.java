@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 
 import com.ktds.ssms.article.biz.ArticleBiz;
 import com.ktds.ssms.article.dao.ArticleDAO;
+import com.ktds.ssms.article.vo.LocationVO;
 import com.ktds.ssms.member.vo.MemberVO;
 
 public class ArticleBizImpl implements ArticleBiz {
@@ -32,11 +33,18 @@ public class ArticleBizImpl implements ArticleBiz {
 		
 		List<MemberVO> patientInfoList = new ArrayList<MemberVO>();
 		MemberVO patientInfo = null;
+		
+		List<LocationVO> locationList = new ArrayList<LocationVO>();
 		// id list for문 돌려서 각각 정보를 가져온다.
 		for (String id : idList) {
 			patientInfo = articleDAO.getPatientInfoById(id);
+			locationList = articleDAO.getLocationVOListById(id);
+			patientInfo.setLocationList(locationList);
+			
 			patientInfoList.add(patientInfo);
 		}
+		
+		
 		return patientInfoList;
 	}
 

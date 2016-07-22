@@ -41,5 +41,17 @@
 		WHERE   ROWNUM=1
 	</select>
 	
+	<select id="getLocationVOListById" parameterType="string" resultType="LocationVO">
+		SELECT  LOCATION_ID locationId
+		        , TIME time
+		FROM    (
+		        SELECT  *
+		        FROM    LOCATION_LOG
+		        WHERE   MBR_ID=#{id}
+		        ORDER   BY LOCATION_LOG_ID DESC
+		        )
+		WHERE   ROWNUM<![CDATA[ <= ]]>10
+	</select>
+	
 
 </mapper>

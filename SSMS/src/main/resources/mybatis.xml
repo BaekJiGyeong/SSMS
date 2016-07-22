@@ -8,6 +8,8 @@
 		<typeAlias type="com.ktds.ssms.member.vo.MemberVO" alias="MemberVO"/>
 		<typeAlias type="com.ktds.ssms.mobile.vo.LocationLogVO" alias="LocationLogVO"/>
 		<typeAlias type="com.ktds.ssms.member.vo.LoginLogVO" alias="LoginLogVO"/>
+		<typeAlias type="com.ktds.ssms.article.vo.LocationVO" alias="LocationVO"/>
+		<typeAlias type="com.ktds.ssms.article.vo.LocationListVO" alias="LocationListVO"/>
 	</typeAliases>
 	
 	<mappers>

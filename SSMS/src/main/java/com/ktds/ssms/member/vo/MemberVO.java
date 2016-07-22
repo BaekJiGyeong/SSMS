@@ -1,10 +1,8 @@
 package com.ktds.ssms.member.vo;
 
-import org.hibernate.validator.constraints.NotEmpty;
+import com.ktds.ssms.article.vo.LocationListVO;
 
-import com.ktds.ssms.article.vo.LocationVO;
-
-public class MemberVO extends LocationVO{
+public class MemberVO extends LocationListVO{
 
 	private String id;
 	
